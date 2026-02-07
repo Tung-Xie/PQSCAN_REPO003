@@ -1,11 +1,12 @@
+import hashlib
 from cryptography.hazmat.primitives.asymmetric import ec
-from cryptography.hazmat.primitives import hashes
-
-def standard_auth_flow():
-    # [Medium] 現代但非 PQC
-    curve = ec.SECP256R1() # NIST P-256
+# 測試標準現代加密（尚未 PQC）
+def standard_auth():
+    # [Medium] 現代 ECC
+    curve1 = "secp256r1"
+    curve2 = "curve25519"
+    # [Medium] 現代對稱加密字串
     cipher = "AES-256-GCM"
-    
-    # 模擬簽章調用
-    digest = hashes.Hash(hashes.SHA256())
-    print(f"Standard Auth: {cipher} over {curve.name}")
+    # [Medium] 現代 Hash
+    m = hashlib.sha256()
+    print(f"Service running on {curve1} with {cipher}")
