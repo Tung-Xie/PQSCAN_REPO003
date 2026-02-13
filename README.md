@@ -1,18 +1,18 @@
-# REPO 003: Python Comprehensive Crypto Matrix
+# REPO 003: Python Crypto Inventory Matrix (Classic Edition)
 
-## 📊 測試範圍 (NIST 2025 標準)
-本專案包含 Python 環境下的全維度密碼學資產測試，嚴格區分風險等級：
+## 📊 Inventory Breakdown
 
-### 🚨 Critical & High (遺留/棄用)
-- **Hash**: MD5, SHA-1
-- **Asymmetric**: RSA-1024, DSA-1024
-- **Curves**: secp160, secp192, sect... (Binary curves)
+### 🚨 Critical Risk
+- **Hash**: MD5
+- **Asymmetric**: RSA-1024
+- **Curves**: secp160k1, secp160r1, secp160r2, secp192k1, secp192r1 (RFC 8422)
 
-### ✅ Medium (符合現行標準)
-- **Hash**: SHA-256, SHA-512
-- **Asymmetric**: RSA-3072, SECP256R1, Brainpool, X25519
+### ⚠️ High Risk
+- **Hash**: SHA-1
+- **Asymmetric**: DSA-1024
+- **Curves**: sect163k1, sect233k1, sect239k1, sect283k1, sect409k1, sect571k1 (Binary Fields)
 
-### ✨ Low (抗量子 PQC)
-- **NIST Standard**: ML-KEM, ML-DSA
-- **Candidates**: Kyber, Dilithium, Falcon, FrodoKEM
-- **Advanced**: MAYO, SNOVA, UOV, Hybrid (X25519_MLKEM768)
+### ✅ Medium Risk (Current Standards)
+- **Hash**: SHA-224, SHA-256, SHA-512
+- **Asymmetric**: RSA-3072, rsa_pss_rsae_sha256
+- **Curves**: SECP256R1, SECP384R1, BrainpoolP256r1, X25519, X448, Ed25519
